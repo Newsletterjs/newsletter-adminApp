@@ -7,6 +7,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('emailtemplate', function(){
+    this.route('create');
+    this.route('item', { path: ':id' }, function(){
+      this.route('edit');
+    });
+  });
+  this.route('newsletter');
 });
 
 export default Router;

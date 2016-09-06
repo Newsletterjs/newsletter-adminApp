@@ -1,0 +1,8 @@
+<h1>Create template</h1>
+
+{{#bs-form action="create"}}
+  {{bs-form-element controlType="text" label="Name" placeholder="Name" value=emailtemplate.name}}
+  {{bs-form-element controlType="textarea" label="Description" placeholder="Description" value=emailtemplate.description}}
+
+  {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+{{/bs-form}}

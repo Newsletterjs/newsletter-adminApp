@@ -1,0 +1,11 @@
+{{#link-to 'emailtemplate.create'}}Create{{/link-to}}
+{{outlet}}
+
+{{
+  models-table
+  data=model.emailtemplates
+  columns=columns
+  view='viewRecord'
+  edit='editRecord'
+  delete='deleteRecord'
+}}
