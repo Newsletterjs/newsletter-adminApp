@@ -19,6 +19,27 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'login',
+    routeAfterAuthentication: '/',
+    authorizer: 'authorizer:token'
+  };
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: ENV['API_HOST'] + '/auth/jwt/authenticate',
+    identificationField: 'email',
+    passwordField: 'password',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'JWT ',
+    authorizationHeaderName: 'Authorization',
+    headers: {},
+    refreshAccessTokens: false,
+    // serverTokenRefreshEndpoint: '/api/token-refresh/',
+    // tokenExpireName: 'exp',
+    refreshLeeway: 0,
+    timeFactor: 1000  // example - set to "1000" to convert incoming seconds to milliseconds.
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -43,27 +64,6 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
-
-  ENV['ember-simple-auth'] = {
-    authenticationRoute: 'login',
-    routeAfterAuthentication: '/',
-    authorizer: 'authorizer:token'
-  };
-
-  ENV['ember-simple-auth-token'] = {
-    serverTokenEndpoint: ENV['API_HOST'] + '/auth/jwt/authenticate',
-    identificationField: 'email',
-    passwordField: 'password',
-    tokenPropertyName: 'token',
-    authorizationPrefix: 'JWT ',
-    authorizationHeaderName: 'Authorization',
-    headers: {},
-    refreshAccessTokens: false,
-    // serverTokenRefreshEndpoint: '/api/token-refresh/',
-    // tokenExpireName: 'exp',
-    refreshLeeway: 0,
-    timeFactor: 1000  // example - set to "1000" to convert incoming seconds to milliseconds.
-  };
 
   return ENV;
 };

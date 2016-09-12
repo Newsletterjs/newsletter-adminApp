@@ -1,0 +1,14 @@
+<h2>{{model.record.name}}</h2>
+<div class="newsletter-description">{{{model.record.description}}}</div>
+<div class="actions">
+  <a href=""></a>
+
+
+  {{#bs-button type="primary" icon="glyphicon glyphicon-edit" action="edit"}}
+    Edit
+  {{/bs-button}}
+
+  {{#bs-button type="default" icon="glyphicon glyphicon-remove" action="destroy"}}
+    Delete
+  {{/bs-button}}
+</div>

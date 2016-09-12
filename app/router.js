@@ -13,7 +13,12 @@ Router.map(function() {
       this.route('edit');
     });
   });
-  this.route('newsletter');
+  this.route('newsletter', function() {
+    this.route('create');
+    this.route('item', { path: ':id' }, function() {
+      this.route('edit');
+    });
+  });
 });
 
 export default Router;

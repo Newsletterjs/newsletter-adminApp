@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     return this.store.createRecord('emailtemplate');
   }.property(),
   actions: {
-    create (x) {
+    create () {
       console.log('this', this.get('emailtemplate') );
 
       this.get('emailtemplate')

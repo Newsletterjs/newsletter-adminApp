@@ -17,13 +17,13 @@ export default Ember.Controller.extend({
   ],
   actions: {
     viewRecord: function (record) {
-      this.transitionToRoute('emailtemplate.item', record);
+      this.transitionToRoute('newsletter.item', record.id);
     },
     editRecord: function (record) {
-      this.transitionToRoute('emailtemplate.item.edit', record);
+      this.transitionToRoute('newsletter.item.edit', record.id);
     },
     deleteRecord: function (record) {
-      if (confirm('Are you sure, you want delete this content?')) {
+      if (confirm('Are you sure, you want delete this newsletter?')) {
         record.destroyRecord();
       }
     }

@@ -1,0 +1,8 @@
+<h1>Create newsletter</h1>
+
+{{#bs-form action="create"}}
+  {{bs-form-element controlType="text" label="Name" placeholder="Name" value=record.name}}
+  {{bs-form-element controlType="textarea" label="Description" placeholder="Description" value=record.description}}
+
+  {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+{{/bs-form}}
